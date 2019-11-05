@@ -1,0 +1,21 @@
+[user]
+	name = FirstName LastName
+	email = my@email.com
+[color]
+	ui = auto
+[push]
+	default = simple
+[core]
+	editor = gedit -s
+[alias]
+	addne = "!f() { git add -N $1; git add -e $1; }; f"
+	backupCheckout = "!f() { cp $1 $1.back; git checkout $1; }; f"
+	createNewBranchAndPush = "!f() { git checkout -b $1; git push -u origin $1; }; f"
+	deleteBranchAndPush = "!f() { git branch --delete $1; git push origin --delete $1; }; f"
+	logOneLine = "!f() { git log -n 11 --oneline; }; f"
+	mergeFastForwardOnlyAndPush = "!f() { git merge --ff-only --no-commit $1; git push; }; f"
+	pullsb = "!f() { git pull; git sb; }; f"
+	rmdeleted = "!f() { git rm $(git ls-files --deleted); }; f"
+	stashpullpop = "!f() { git stash; git pull; git stash pop; }; f"
+	stashpullpopreset = "!f() { git stash; git pull; git stash pop; git reset; }; f"
+	sb = "!f() { git status -sb; }; f"
