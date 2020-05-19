@@ -9,10 +9,13 @@
 	editor = gedit -s
 [alias]
 	addne = "!f() { git add -N $1; git add -e $1; }; f"
+	addAllSb = "!f() { git add .; git status -sb; }; f"
 	backupCheckout = "!f() { cp $1 $1.back; git checkout $1; }; f"
+	branchvv = "!f() { git branch -vv; }; f"
 	commitAndPush = "!f() { git commit -m \"$1\"; git push; }; f"
 	createNewBranchAndPush = "!f() { git checkout -b $1; git push -u origin $1; }; f"
 	deleteBranchAndPush = "!f() { git branch --delete $1; git push origin --delete $1; }; f"
+	fetchp = "!f() { git fetch -p; }; f"
 	logOneLine = "!f() { git log -n 11 --oneline; }; f"
 	mergeFastForwardOnlyAndPush = "!f() { git merge --ff-only --no-commit $1; git push; }; f"
 	pullsb = "!f() { git pull; git sb; }; f"
